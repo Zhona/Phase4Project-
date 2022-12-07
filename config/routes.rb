@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :comments, only: [:create, :index, :show, :delete]
   resources :profiles, only: [:create, :update, :delete]
   resources :users, only: [:create, :show, :update, :delete]
-  resources :products
+  resources :productsls
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
