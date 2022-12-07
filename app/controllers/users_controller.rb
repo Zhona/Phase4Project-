@@ -2,10 +2,14 @@ class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found 
 
+    def index 
+        users = User.all 
+        render json: users 
+    end 
 
     def show 
         user = find_user
-        render json: user 
+        render json: user, serializer: UserSerializer
     end
 
     def create 
@@ -16,10 +20,10 @@ class UsersController < ApplicationController
     def update 
         user = find_user
         user.update!(user_params)
-        render json: user, status: :updated
+        render json: user 
     end
 
-    def delete 
+    def destroy
         user = find_user
         user.destroy
         head :no_content

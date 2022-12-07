@@ -12,7 +12,7 @@
  User.create!(username:"Elmo", avatar: "https://media.npr.org/assets/img/2022/01/04/ap_862432864149-4d5ff9168210d99b12e590df1e831eafe0ab626f-s1100-c50.jpg")
                             ###### PRODUCTS #######
 Product.create!(user_id:1 , price: 1230, url:"https://img.seadn.io/files/baf9d61b61ffe6be242ffbf671602779.png?fit=max&w=1000" , description:"20,000 next-gen Avatars, by RTFKT and Takashi Murakami", like_count: 41, name: "CloneX #12308")
-Product.create!(user_id:1 , price: 250 ,url: "https://img.seadn.io/files/a0e47cffe4d7320bfdf2038ea3b7a3d9.png?fit=max&w=1000" , description:"20,000 next-gen Avatars, by RTFKT and Takashi Murakami" , like_count: 8 , name:"CloneX #4972" )
+Product.create!(user_id:1 , price: 250 ,url: "https://img.seadn.io/files/a0e47cffe4d7320bfdf2038ea3b7a3d9.png?fit=max&w=1000" , description:"20,000 next-gen Avatars, by RTFKT and Takashi Murakami" , like_count: 8 , name:"CloneX #4972")
 Product.create!(user_id:1 , price: 169 ,url: "https://img.seadn.io/files/a3ca5ad389e5accd86c97373caf09b61.png?fit=max&w=1000" , description:"20,000 next-gen Avatars, by RTFKT and Takashi Murakami", like_count: 13 ,name:"CloneX #6316")
 Product.create!(user_id:1 , price: 150 ,url: "https://img.seadn.io/files/8faa874b9aa48e86a0b737753541030e.png?fit=max&w=1000" , description:"20,000 next-gen Avatars, by RTFKT and Takashi Murakami", like_count: 18,name:"CloneX #16509") #4
 Product.create!(user_id:1 , price: 123 ,url: "https://img.seadn.io/files/e49011005196c6ffba2fb522607892d4.png?fit=max&w=1000" , description:"20,000 next-gen Avatars, by RTFKT and Takashi Murakami", like_count:43,name:"CloneX #7927")
@@ -60,6 +60,5 @@ Category.create!(is3d: false, product_id: 20)
                             ###### COMMENT #######
 Comment.create!(comments:"I love this piece, I know because I made it" , user_id: 1, product_id:1)
 Comment.create!(comments:"OMG!! ELmo is on thw way to fight big yellow bird too!" , user_id: 3, product_id:13)
-                            ###### LIKE #######
-Like.create!(user_id:1, product_id:1, liked: true)
+                            
                           

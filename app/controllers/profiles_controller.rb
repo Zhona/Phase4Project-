@@ -2,6 +2,15 @@ class ProfilesController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found 
 
+    def index 
+        profiles = Profile.all 
+        render json: profiles 
+    end 
+
+    def show 
+        profile = find_profile
+        render json: profile, serializer: ProfileSerializer
+    end 
 
     def create 
         profile = Profile.create!(profile_params)
@@ -11,10 +20,10 @@ class ProfilesController < ApplicationController
     def update
     profile = find_profile
     profile.update!(profile_params)
-    render json: profile, status: :updated
+    render json: profile
     end
 
-    def delete 
+    def destroy
         profile = find_profile
         profile.destroy
         head :no_content 
@@ -23,7 +32,7 @@ class ProfilesController < ApplicationController
     private 
 
     def profile_params 
-        params.permit(:first_name, :last_name, :email, :password)
+        params.permit(:user_id, :first_name, :Last_name, :email, :password_digest)
     end
 
     def find_profile 

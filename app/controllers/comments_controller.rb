@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
     def index 
         comment = Comment.all
-        render json: comment, status: :ok 
+        render json: comment 
     end 
 
     def show 
@@ -13,11 +13,11 @@ class CommentsController < ApplicationController
     end 
 
     def create 
-        comment.create!(comment_params)
+        comment = Comment.create!(comment_params)
         render json: comment, status: :created
     end 
-
-    def delete 
+ 
+    def destroy
         comment = find_comment
         comment.destroy
         head :no_content 
@@ -31,7 +31,7 @@ class CommentsController < ApplicationController
     end
 
     def comment_params 
-        params.permit(:comments)
+        params.permit(:comments, :user_id, :product_id)
     end
 
     def record_not_found 

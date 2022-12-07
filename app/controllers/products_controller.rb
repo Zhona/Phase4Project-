@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
 
     def show 
         product = find_product
-        render json: product
+        render json: product, serializer: ProductSerializer
     end 
 
     def create 
@@ -21,10 +21,10 @@ class ProductsController < ApplicationController
     def update 
         product = find_product
         product.update!(product_params)
-        render json: product, status: :updated
+        render json: product
     end 
 
-    def delete
+    def destroy 
         product = find_product
         product.destroy
         head :no_content 
@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
     end
 
     def product_params 
-        params.permit(:name, :url, :price, :description)
+        params.permit(:user_id, :name, :url, :price, :description, :name, :like_count)
     end
 
     def record_not_found 

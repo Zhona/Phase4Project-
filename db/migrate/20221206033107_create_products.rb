@@ -6,6 +6,7 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.string :url
       t.text :description
       t.integer :like_count
+      
 
       t.timestamps
     end
