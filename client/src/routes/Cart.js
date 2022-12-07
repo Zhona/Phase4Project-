@@ -5,4 +5,4 @@ function Cart () {
     )
 }
 
-export default Products
+export default Cart
