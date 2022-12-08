@@ -26,14 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_170710) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "product_id"
-    t.boolean "liked"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.integer "user_id"
     t.float "price"
@@ -45,19 +37,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_170710) do
     t.string "name"
   end
 
-  create_table "profiles", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "first_name"
-    t.string "Last_name"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "avatar"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

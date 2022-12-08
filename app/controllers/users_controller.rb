@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    skip_before_action :authorized, only: [:create]
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found 
 
@@ -14,8 +15,16 @@ class UsersController < ApplicationController
 
     def create 
         user = User.create!(user_params)
-         render json: user, status: :created
+        @token = encode_token(user_id: user.id)
+         render json: {
+            user: UserSerializer.new(user),
+            token: @token
+        }, status: :created
     end
+
+    def me
+        render json: current_user, status: :ok
+    end 
 
     def update 
         user = find_user
@@ -36,7 +45,7 @@ class UsersController < ApplicationController
     end
 
     def user_params 
-        params.permit(:username, :avatar)
+        params.permit(:username, :avatar, :email, :password)
     end
 
     def record_not_found 

@@ -7,9 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
  ###### USERS ####### ##user 1 = creator of 3d jpegs, 
- User.create!(username:"RTFKT" , avatar: "https://ichef.bbci.co.uk/news/976/cpsprodpb/0C47/production/_121134130_ye_getty.jpg") #user 1 is the creator of all 3d jpeg 
- User.create!(username:"KPR", avatar: "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRoDpC6H1YXF3kJCkTW34vx24mzgeqko1nLVPPTylrOH-_3xzQsgaImHcHNPPrulWrlWEVNNZqOxISGnAA") #user 2 aka creator of all 2d nft 
- User.create!(username:"Elmo", avatar: "https://media.npr.org/assets/img/2022/01/04/ap_862432864149-4d5ff9168210d99b12e590df1e831eafe0ab626f-s1100-c50.jpg")
+ User.create!(username:"RTFKT" ,email: "rtfkt@gmail.com", password: "bronco" , avatar: "https://ichef.bbci.co.uk/news/976/cpsprodpb/0C47/production/_121134130_ye_getty.jpg") #user 1 is the creator of all 3d jpeg 
+ User.create!(username:"KPR", email: "kpr@yahoo.com", password: "jimmyjohn", avatar: "http://t2.gstatic.com/licensed-image?q=tbn:ANd9GcRoDpC6H1YXF3kJCkTW34vx24mzgeqko1nLVPPTylrOH-_3xzQsgaImHcHNPPrulWrlWEVNNZqOxISGnAA") #user 2 aka creator of all 2d nft 
+ User.create!(username:"Elmo", email: "elmo@gmail.com", password: "helloWorld", avatar: "https://media.npr.org/assets/img/2022/01/04/ap_862432864149-4d5ff9168210d99b12e590df1e831eafe0ab626f-s1100-c50.jpg")
                             ###### PRODUCTS #######
 Product.create!(user_id:1 , price: 1230, url:"https://img.seadn.io/files/baf9d61b61ffe6be242ffbf671602779.png?fit=max&w=1000" , description:"20,000 next-gen Avatars, by RTFKT and Takashi Murakami", like_count: 41, name: "CloneX #12308")
 Product.create!(user_id:1 , price: 250 ,url: "https://img.seadn.io/files/a0e47cffe4d7320bfdf2038ea3b7a3d9.png?fit=max&w=1000" , description:"20,000 next-gen Avatars, by RTFKT and Takashi Murakami" , like_count: 8 , name:"CloneX #4972")
@@ -33,8 +33,8 @@ Product.create!(user_id:2 , price:0.149, url: "https://i.seadn.io/gae/4OApFMYQIx
 Product.create!(user_id:2 , price:0.2452, url: "https://i.seadn.io/gae/WtwJEiaIH9vetIFQUBtgdQLD6MZ_0jyHIC0w7pnChZo1jHAZnE_rVAAlFv276w35F99wQlHyLFJfT0Y-_6PqQRj7KFYTFwcvnmPL4g?auto=format&w=1000" , description:"Tech avatars, by KPR and League of Legends", like_count: 3,name:"Keeper #9172") 
 Product.create!(user_id:2 , price:0.249, url: "https://i.seadn.io/gae/zSeq05JL9pdf4gErPZPC4NvqerU6bG7N_qcsGKfXeHpov14hqan_gz1n3ITW2TrsgaJGA6YXclGxEK0RQGf-sIaYQnN2kzRyP8kCtJ0?auto=format&w=1000" , description:"Tech avatars, by KPR and the hood", like_count:5,name:"Keeper #7329") #20
                             ###### PROFILE #######
-Profile.create!(user_id: 1,first_name: "Takashi", Last_name: "Murakami", email:"TK@gmail.com", password_digest:"DonaldDuck")
-Profile.create!(user_id: 2,first_name: "Keeper", Last_name:"number", email: "KN@gmail.com", password_digest: "NIssan")
+# Profile.create!(user_id: 1,first_name: "Takashi", Last_name: "Murakami", email:"TK@gmail.com", password_digest:"DonaldDuck")
+# Profile.create!(user_id: 2,first_name: "Keeper", Last_name:"number", email: "KN@gmail.com", password_digest: "NIssan")
                             ###### CATEGORY #######
 Category.create!(is3d: true, product_id:1 )#1
 Category.create!(is3d: true, product_id:2 )
